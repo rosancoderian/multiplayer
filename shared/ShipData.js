@@ -1,4 +1,4 @@
-if(isBrowser) {
+if(IS_BROWSER) {
     module.exports = ShipData
 }
 
