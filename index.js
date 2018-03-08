@@ -11,6 +11,7 @@ const Loki = require('lokijs')
 const db = new Loki('db.json')
 const game = require('gameloop')({ fps: 30 })
 const ShipData = require('./shared/ShipData')
+const CommandData = require('./shared/CommandData')
 
 app.use('/', express.static(CLIENT_DIR))
 app.use('/shared', express.static(SHARED_DIR))
@@ -22,10 +23,10 @@ let ships = db.addCollection('ship')
 
 io.on('connection', (socket) => {
 	socket.on('join', (data) => {
-		ships.insert(ShipData({ ...data, id: this.id }))
+		ships.insert(ShipData({ ...data, id: socket.id }))
 	})
 	socket.on('command', (data) => {
-		commands.insert(CommandData({ ...data, id: this.id }))
+		commands.insert(CommandData({ ...data, id: socket.id }))
 	})
 })
 
