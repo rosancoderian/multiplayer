@@ -1,13 +1,12 @@
-function ShipData (id, opt = {}) {
-  return {
-    id,
-    type: 'ship',
-    name: opt.name || null,
-    health: opt.health || null,
-    name: opt.name || null,
-    x: opt.x || 0,
-    y: opt.y || 0
-  }
-}
+module.exports = ShipData;
 
-if(!(typeof window === 'undefined')) module.exports = ShipData
+function ShipData(data = {}) {
+    const base = {
+        id: false,
+        x: 0,
+        y: 0,
+        health: 100,
+        name: false
+    };
+    return { ...base, ...data };
+}

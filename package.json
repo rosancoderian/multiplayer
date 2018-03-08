@@ -4,13 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --inspect index.js"
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "express": "^4.16.2",
     "gameloop": "^1.1.4",
     "lokijs": "^1.5.3",
-    "phaser": "3.1.2",
+    "phaser": "3.2.0",
     "socket.io": "^2.0.4"
   }
 }

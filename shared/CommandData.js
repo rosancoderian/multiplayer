@@ -1,9 +1,10 @@
-function CommandData (id, opt) {
-    return {
-        id,
-        type: 'command',
-        timestamp: opt.timestamp
-    }
-}
+module.exports = CommandData
 
-if (!(typeof window === "undefined")) module.exports = CommandData;
+function CommandData (data = {}) {
+    const base = {
+        id: false,
+        type: false,
+        timestamp: false
+    }
+    return { ...base, ...data }
+}
