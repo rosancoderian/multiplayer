@@ -1,4 +1,6 @@
-module.exports = ShipData;
+if(isBrowser) {
+    module.exports = ShipData
+}
 
 function ShipData(data = {}) {
     const base = {

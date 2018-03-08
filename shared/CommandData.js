@@ -1,4 +1,6 @@
-module.exports = CommandData
+if(isBrowser) {
+    module.exports = CommandData
+}
 
 function CommandData (data = {}) {
     const base = {

@@ -2,6 +2,7 @@ global.MODULES_DIR = __dirname + '/node_modules'
 global.CLIENT_DIR = __dirname + '/client'
 global.SERVER_DIR = __dirname + '/server'
 global.SHARED_DIR = __dirname + '/shared'
+global.IS_BROWSER = !typeof window === 'undefined'
 
 const express = require('express');
 const app = express();
