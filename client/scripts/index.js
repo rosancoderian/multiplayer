@@ -1,12 +1,15 @@
 const socket = io.connect('localhost:4444')
-let world = null;
+let world = [];
 
 socket.on('connect', (data) => {
-    socket.emit('join')
+    socket.emit('join', ShipData({
+        name: 'kapal',
+    }))
 })
 
 socket.on('update', (data) => {
     world = data
+    console.log(world)
 })
 
 const game = new Phaser.Game({
