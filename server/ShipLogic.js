@@ -1,12 +1,3 @@
-if(!IS_BROWSER) {
-    module.exports = {
-        left,
-        right,
-        up,
-        down,
-        update
-    }
-}
 
 function left (shipData) {
     return Object.assign(shipData, { x: shipData.x - 1 })
