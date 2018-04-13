@@ -2,7 +2,8 @@ global.MODULES_DIR = __dirname + '/node_modules'
 global.CLIENT_DIR = __dirname + '/client'
 global.SERVER_DIR = __dirname + '/server'
 global.SHARED_DIR = __dirname + '/shared'
-global.IS_SERVER = typeof window == 'undefined'
+global.SERVER = typeof window == 'undefined'
+global.is = x => typeof x !== 'undefined'
 global.log = console.log
 
 const express = require('express')
