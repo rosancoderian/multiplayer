@@ -1,5 +1,5 @@
 const socket = io.connect('localhost:4444')
-let world = [];
+let world = null;
 
 socket.on('connect', (data) => {
     socket.emit('join', ShipData({
@@ -9,12 +9,11 @@ socket.on('connect', (data) => {
 
 socket.on('update', (data) => {
     world = data
-    console.log(world)
 })
 
 const game = new Phaser.Game({
-    width: 500,
-    height: 500,
+    width: window.innerWidth * window.devicePixelRatio,
+    height: window.innerHeight * window.devicePixelRatio,
     scene: {
         preload,
         create,
@@ -33,7 +32,7 @@ function create () {
     this.keyDown = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN)
 }
 
-function update () {
+function update () { 
     if(this.keyLeft.isDown) {
         socket.emit('command', {
             type: 'LEFT',
